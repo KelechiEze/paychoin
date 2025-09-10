@@ -55,7 +55,7 @@ const ContactForm = () => {
     {
       icon: MapPin,
       title: 'Visit Us',
-      value: '123 Crypto Street, NYC',
+      value: '600 E 4th St, Charlotte, NC',
       description: 'Our main headquarters'
     },
     {

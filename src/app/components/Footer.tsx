@@ -58,7 +58,7 @@ const Footer = () => {
             </div>
             <div className="contact-item">
               <MapPin size={16} />
-              <span>123 Crypto Street, NYC</span>
+              <span>600 E 4th St, Charlotte, NC</span>
             </div>
           </div>
         </div>
