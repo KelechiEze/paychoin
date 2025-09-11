@@ -72,9 +72,6 @@ const HeroSection = () => {
                 GET STARTED
                 <ArrowRight size={20} />
               </button>
-              <button className="btn-hero-outline">
-                WHITEPAPER
-              </button>
             </div>
 
             <div className="hero-features">

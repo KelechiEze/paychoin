@@ -92,7 +92,10 @@ const WhyChooseUs = () => {
             <p className="cta-description">
               Join thousands of successful traders and start your crypto journey today.
             </p>
-            <button className="cta-button">
+            <button
+              className="cta-button"
+              onClick={() => window.location.href = "https://paycoin-dashboard.netlify.app"}
+            >
               Get Started Now
             </button>
           </div>

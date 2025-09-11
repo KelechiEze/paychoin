@@ -14,12 +14,12 @@ const Footer = () => {
             <p className="brand-description">
               Leading the future of cryptocurrency trading with secure, innovative, and profitable investment solutions.
             </p>
-            <div className="social-links">
+           {/*<div className="social-links">
               <a href="#" className="social-link"><Twitter /></a>
               <a href="#" className="social-link"><Facebook /></a>
               <a href="#" className="social-link"><Linkedin /></a>
               <a href="#" className="social-link"><Instagram /></a>
-            </div>
+            </div>*/}
           </div>
 
           <div className="footer-links">
@@ -48,10 +48,6 @@ const Footer = () => {
 
           <div className="footer-contact">
             <h4>Contact Info</h4>
-            <div className="contact-item">
-              <Mail size={16} />
-              <span>support@paycoin.com</span>
-            </div>
             <div className="contact-item">
               <Phone size={16} />
               <span>+1 (555) 123-4567</span>

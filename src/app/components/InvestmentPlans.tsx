@@ -13,7 +13,6 @@ const InvestmentPlans = () => {
         "24/7 Customer Support",
         "Secure Wallet Integration",
         "Real-time Portfolio Tracking",
-        "Mobile App Access",
       ],
       popular: false,
       color: "from-blue-500 to-blue-600",
