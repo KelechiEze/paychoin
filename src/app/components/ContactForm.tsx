@@ -43,7 +43,7 @@ const ContactForm = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      value: 'paycoinsupport@gmail.com',
+      value: 'paycoincustomercare@gmail.com',
       description: 'Send us an email anytime'
     },
     {

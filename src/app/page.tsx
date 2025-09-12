@@ -9,6 +9,7 @@ import CryptoSlider from './components/CryptoSlider';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
 import ContactForm from './components/ContactForm';
+import CryptoLandSection from './components/CryptoLandSection'
 import Footer from './components/Footer';
 import Preloader from './components/Preloader';
 
@@ -35,6 +36,7 @@ const Index = () => {
       <InvestmentPlans />
       <AboutSection />
       <CryptoSlider />
+      <CryptoLandSection />
       <WhyChooseUs />
       <Testimonials />
       <ContactForm />
