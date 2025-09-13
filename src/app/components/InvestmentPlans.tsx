@@ -5,7 +5,7 @@ const InvestmentPlans = () => {
   const plans = [
     {
       name: "Basic",
-      minInvestment: "$1,000 - $9,999.99",
+      minInvestment: "$1,000 - $9,999",
       roi: "5-7% Weekly",
       duration: "4 Weeks",
       totalReturn: "40%",
@@ -19,7 +19,7 @@ const InvestmentPlans = () => {
     },
     {
       name: "Professional Plan",
-      minInvestment: "$11,000- $49,999.99",
+      minInvestment: "$11,000- $49,999",
       roi: "8-10% Weekly",
       duration: "6 Weeks",
       totalReturn: "72%",
@@ -35,7 +35,24 @@ const InvestmentPlans = () => {
     },
     {
       name: "Enterprise Plan",
-      minInvestment: "$15,000",
+      minInvestment: "$50,000- $99,999",
+      roi: "15% Weekly",
+      duration: "8 Weeks",
+      totalReturn: "120%",
+      features: [
+        "VIP Customer Support",
+        "Custom Trading Strategies",
+        "Direct Market Access",
+        "Personal Investment Advisor",
+        "Exclusive Investment Opportunities",
+        "Risk Management Tools",
+      ],
+      popular: false,
+      color: "from-gold-500 to-yellow-500",
+    },
+    {
+      name: "Enterprise Plan",
+      minInvestment: "$99,999- $149,999",
       roi: "15% Weekly",
       duration: "8 Weeks",
       totalReturn: "120%",
