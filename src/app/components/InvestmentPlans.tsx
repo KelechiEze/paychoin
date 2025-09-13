@@ -4,9 +4,9 @@ import "./InvestmentPlans.css";
 const InvestmentPlans = () => {
   const plans = [
     {
-      name: "Starter Plan",
-      minInvestment: "$1,000",
-      roi: "10% Weekly",
+      name: "Basic",
+      minInvestment: "$1,000 - $9,999.99",
+      roi: "5-7% Weekly",
       duration: "4 Weeks",
       totalReturn: "40%",
       features: [
@@ -19,8 +19,8 @@ const InvestmentPlans = () => {
     },
     {
       name: "Professional Plan",
-      minInvestment: "$5,000",
-      roi: "12% Weekly",
+      minInvestment: "$11,000- $49,999.99",
+      roi: "8-10% Weekly",
       duration: "6 Weeks",
       totalReturn: "72%",
       features: [
