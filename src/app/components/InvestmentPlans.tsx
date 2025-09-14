@@ -4,8 +4,8 @@ import "./InvestmentPlans.css";
 const InvestmentPlans = () => {
   const plans = [
     {
-      name: "Basic",
-      minInvestment: "$1,000 - $9,999",
+      name: "Basic Plan",
+      minInvestment: "$500 - $5,000",
       roi: "5-7% Weekly",
       duration: "4 Weeks",
       totalReturn: "40%",
@@ -18,8 +18,8 @@ const InvestmentPlans = () => {
       color: "from-blue-500 to-blue-600",
     },
     {
-      name: "Professional Plan",
-      minInvestment: "$11,000- $49,999",
+      name: "Gold Plan",
+      minInvestment: "$5,500 - $25,500",
       roi: "8-10% Weekly",
       duration: "6 Weeks",
       totalReturn: "72%",
@@ -34,8 +34,8 @@ const InvestmentPlans = () => {
       color: "from-purple-500 to-pink-500",
     },
     {
-      name: "Enterprise Plan",
-      minInvestment: "$50,000- $99,999",
+      name: "Premium Plan",
+      minInvestment: "$26,000- $100,000",
       roi: "15% Weekly",
       duration: "8 Weeks",
       totalReturn: "120%",
@@ -51,8 +51,8 @@ const InvestmentPlans = () => {
       color: "from-gold-500 to-yellow-500",
     },
     {
-      name: "Enterprise Plan",
-      minInvestment: "$99,999- $149,999",
+      name: "Excel Plan",
+      minInvestment: "$100,000 - unlimited",
       roi: "15% Weekly",
       duration: "8 Weeks",
       totalReturn: "120%",
