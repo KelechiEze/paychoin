@@ -1,4 +1,4 @@
-import { Check, TrendingUp, DollarSign, Clock } from "lucide-react";
+import { Check, TrendingUp } from "lucide-react";
 import "./InvestmentPlans.css";
 
 const InvestmentPlans = () => {
@@ -7,8 +7,6 @@ const InvestmentPlans = () => {
       name: "Basic Plan",
       minInvestment: "$500 - $5,000",
       roi: "5-7% Weekly",
-      duration: "4 Weeks",
-      totalReturn: "40%",
       features: [
         "24/7 Customer Support",
         "Secure Wallet Integration",
@@ -21,8 +19,6 @@ const InvestmentPlans = () => {
       name: "Gold Plan",
       minInvestment: "$5,500 - $25,500",
       roi: "8-10% Weekly",
-      duration: "6 Weeks",
-      totalReturn: "72%",
       features: [
         "Priority Customer Support",
         "Advanced Analytics Dashboard",
@@ -35,10 +31,8 @@ const InvestmentPlans = () => {
     },
     {
       name: "Premium Plan",
-      minInvestment: "$26,000- $100,000",
-      roi: "15% Weekly",
-      duration: "8 Weeks",
-      totalReturn: "120%",
+      minInvestment: "$26,000 - $100,000",
+      roi: "11-14% Weekly",
       features: [
         "VIP Customer Support",
         "Custom Trading Strategies",
@@ -52,10 +46,8 @@ const InvestmentPlans = () => {
     },
     {
       name: "Excel Plan",
-      minInvestment: "$100,000 - unlimited",
-      roi: "15% Weekly",
-      duration: "8 Weeks",
-      totalReturn: "120%",
+      minInvestment: "$100,000 - Unlimited",
+      roi: "15-20% Weekly",
       features: [
         "VIP Customer Support",
         "Custom Trading Strategies",
@@ -108,20 +100,6 @@ const InvestmentPlans = () => {
                   <div className="stat-content">
                     <span className="stat-value">{plan.roi}</span>
                     <span className="stat-label">Return Rate</span>
-                  </div>
-                </div>
-                <div className="stat-item">
-                  <Clock className="stat-icon" />
-                  <div className="stat-content">
-                    <span className="stat-value">{plan.duration}</span>
-                    <span className="stat-label">Duration</span>
-                  </div>
-                </div>
-                <div className="stat-item">
-                  <DollarSign className="stat-icon" />
-                  <div className="stat-content">
-                    <span className="stat-value">{plan.totalReturn}</span>
-                    <span className="stat-label">Total Return</span>
                   </div>
                 </div>
               </div>

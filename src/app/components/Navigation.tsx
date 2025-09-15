@@ -29,6 +29,11 @@ const Navigation = () => {
     setIsMenuOpen(false);
   };
 
+  const handleSignIn = () => {
+    // Immediate navigation, faster than <a>
+    window.location.href = "https://paycoin-dashboard.netlify.app/";
+  };
+
   const navItems = [
     { name: "Home", id: "home" },
     { name: "Investment Plans", id: "investment" },
@@ -63,15 +68,10 @@ const Navigation = () => {
           </div>
 
           <div className="nav-actions">
-            {/* Sign In Link */}
-            <a
-              href="https://paycoin-dashboard.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sign-in-btn"
-            >
+            {/* Sign In Button (Fast Redirect) */}
+            <button onClick={handleSignIn} className="sign-in-btn">
               SIGN IN
-            </a>
+            </button>
 
             {/* Mobile Menu Toggle */}
             <button
