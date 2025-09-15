@@ -4,6 +4,14 @@ import { useEffect, useState } from 'react';
 import { TrendingUp, TrendingDown } from 'lucide-react';
 import './CryptoSlider.css';
 
+type CoinGeckoCoin = {
+  id: string;
+  symbol: string;
+  name: string;
+  current_price: number;
+  price_change_percentage_24h: number;
+};
+
 type Crypto = {
   symbol: string;
   name: string;
@@ -22,9 +30,9 @@ const CryptoSlider = () => {
         const response = await fetch(
           'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,binancecoin,cardano,solana,polkadot,avalanche-2,polygon'
         );
-        const data = await response.json();
+        const data: CoinGeckoCoin[] = await response.json();
 
-        const formattedData: Crypto[] = data.map((coin: any) => ({
+        const formattedData: Crypto[] = data.map((coin) => ({
           symbol: coin.symbol.toUpperCase(),
           name: coin.name,
           price: `$${coin.current_price.toLocaleString()}`,
