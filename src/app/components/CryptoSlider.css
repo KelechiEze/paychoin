@@ -35,7 +35,7 @@
 .crypto-slider-track {
   display: flex;
   gap: 2rem;
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-left 25s linear infinite; /* ⚡ faster than before */
   width: max-content;
 }
 
@@ -144,10 +144,11 @@
   animation-play-state: paused;
 }
 
-/* Responsive Design */
+/* Responsive Design + Speed Tweaks */
 @media (max-width: 800px) {
   .crypto-slider-track {
     gap: 1rem;
+    animation-duration: 15s; /* ⚡ faster on tablets */
   }
   
   .crypto-card-mini {
@@ -173,6 +174,10 @@
 }
 
 @media (max-width: 480px) {
+  .crypto-slider-track {
+    animation-duration: 12s; /* ⚡ even faster on mobile */
+  }
+
   .crypto-card-mini {
     min-width: 160px;
     padding: 0.5rem 0.75rem;
