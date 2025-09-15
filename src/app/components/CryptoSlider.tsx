@@ -1,75 +1,67 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { TrendingUp, TrendingDown } from 'lucide-react';
 import './CryptoSlider.css';
 
-const CryptoSlider = () => {
-  const cryptoData = [
-    {
-      symbol: 'BTC',
-      name: 'Bitcoin',
-      price: '$67,234.56',
-      change: '+2.45%',
-      isPositive: true,
-      icon: '₿'
-    },
-    {
-      symbol: 'ETH',
-      name: 'Ethereum',
-      price: '$3,456.78',
-      change: '+1.23%',
-      isPositive: true,
-      icon: 'Ξ'
-    },
-    {
-      symbol: 'BNB',
-      name: 'Binance Coin',
-      price: '$345.67',
-      change: '-0.89%',
-      isPositive: false,
-      icon: 'BNB'
-    },
-    {
-      symbol: 'ADA',
-      name: 'Cardano',
-      price: '$0.456',
-      change: '+3.45%',
-      isPositive: true,
-      icon: '₳'
-    },
-    {
-      symbol: 'SOL',
-      name: 'Solana',
-      price: '$123.45',
-      change: '+5.67%',
-      isPositive: true,
-      icon: '◎'
-    },
-    {
-      symbol: 'DOT',
-      name: 'Polkadot',
-      price: '$12.34',
-      change: '-1.23%',
-      isPositive: false,
-      icon: '●'
-    },
-    {
-      symbol: 'AVAX',
-      name: 'Avalanche',
-      price: '$34.56',
-      change: '+2.89%',
-      isPositive: true,
-      icon: '🔺'
-    },
-    {
-      symbol: 'MATIC',
-      name: 'Polygon',
-      price: '$0.89',
-      change: '+4.12%',
-      isPositive: true,
-      icon: '⬣'
-    }
-  ];
+type Crypto = {
+  symbol: string;
+  name: string;
+  price: string;
+  change: string;
+  isPositive: boolean;
+  icon: string;
+};
 
-  // Duplicate the array for seamless infinite scroll
+const CryptoSlider = () => {
+  const [cryptoData, setCryptoData] = useState<Crypto[]>([]);
+
+  useEffect(() => {
+    const fetchCryptoData = async () => {
+      try {
+        const response = await fetch(
+          'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,binancecoin,cardano,solana,polkadot,avalanche-2,polygon'
+        );
+        const data = await response.json();
+
+        const formattedData: Crypto[] = data.map((coin: any) => ({
+          symbol: coin.symbol.toUpperCase(),
+          name: coin.name,
+          price: `$${coin.current_price.toLocaleString()}`,
+          change: `${coin.price_change_percentage_24h.toFixed(2)}%`,
+          isPositive: coin.price_change_percentage_24h >= 0,
+          icon:
+            coin.symbol === 'btc'
+              ? '₿'
+              : coin.symbol === 'eth'
+              ? 'Ξ'
+              : coin.symbol === 'bnb'
+              ? 'BNB'
+              : coin.symbol === 'ada'
+              ? '₳'
+              : coin.symbol === 'sol'
+              ? '◎'
+              : coin.symbol === 'dot'
+              ? '●'
+              : coin.symbol === 'avax'
+              ? '🔺'
+              : coin.symbol === 'matic'
+              ? '⬣'
+              : '₿',
+        }));
+
+        setCryptoData(formattedData);
+      } catch (error) {
+        console.error('Error fetching crypto data:', error);
+      }
+    };
+
+    fetchCryptoData();
+    const interval = setInterval(fetchCryptoData, 60000); // refresh every 1 min
+    return () => clearInterval(interval);
+  }, []);
+
+  // Duplicate data for smooth infinite scroll
   const duplicatedData = [...cryptoData, ...cryptoData];
 
   return (
@@ -86,7 +78,11 @@ const CryptoSlider = () => {
             </div>
             <div className="crypto-price-info">
               <span className="crypto-price">{crypto.price}</span>
-              <div className={`crypto-change ${crypto.isPositive ? 'positive' : 'negative'}`}>
+              <div
+                className={`crypto-change ${
+                  crypto.isPositive ? 'positive' : 'negative'
+                }`}
+              >
                 {crypto.isPositive ? (
                   <TrendingUp size={12} />
                 ) : (
